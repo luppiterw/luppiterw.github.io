@@ -1,0 +1,27 @@
+---
+layout: default
+title: 文章归档
+---
+
+<div class="post-detail-card">
+  <h1 style="margin-bottom: 1.5rem; color: var(--text-primary);">📚 全局文章归档</h1>
+  
+  <div class="archive-list">
+    {% for post in site.posts %}
+      {% capture currentyear %}{{ post.date | date: "%Y" }}{% endcapture %}
+      {% if currentyear != year %}
+        {% unless forloop.first %}</ul>{% endunless %}
+        <h2 style="margin: 1.5rem 0 1rem 0; color: var(--accent-color); font-size: 1.3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.4rem;">{{ currentyear }} 年</h2>
+        <ul style="list-style: none; padding-left: 0;">
+        {% capture year %}{{ currentyear }}{% endcapture %}
+      {% endif %}
+      
+      <li style="margin-bottom: 0.75rem; display: flex; gap: 1rem; align-items: baseline;">
+        <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 0.85rem;">{{ post.date | date: "%m-%d" }}</span>
+        <a href="{{ post.url | relative_url }}" style="font-weight: 500;">{{ post.title }}</a>
+      </li>
+      
+      {% if forloop.last %}</ul>{% endif %}
+    {% endfor %}
+  </div>
+</div>
