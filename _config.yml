@@ -1,3 +1,18 @@
 theme: jekyll-theme-minimal
-title: Octocat's homepage
-description: Bookmark this to keep an eye on my project updates!
+title: 鬼打更
+description: 聐聐 # Luppiter
+author: Luppiter
+lang: zh-CN
+permalink: /:year/:month/:day/:title/
+timezone: Asia/Shanghai
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - .hug/
