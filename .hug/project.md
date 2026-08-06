@@ -47,6 +47,9 @@ workspace:
   - .hug/local/
   - .git/
   - _site/
+  - _posts/
+  - assets/
+  - node_modules/
   - dist/
   - build/
 
